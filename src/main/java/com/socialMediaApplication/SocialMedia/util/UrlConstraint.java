@@ -23,7 +23,7 @@ public class UrlConstraint {
         public static final String UPDATE = "/Update";
         public static final String DELETE = "/Delete" + "/{id}";
         public static final String GET = "/GetPost" + "/{id}";
-        public static final String GET_ALL = "/GetALlPost";
+        public static final String GET_ALL = "/GetAllPost";
     }
     public class LocationManagement {
         public static final String ROOT = API + VERSION + "/Location";

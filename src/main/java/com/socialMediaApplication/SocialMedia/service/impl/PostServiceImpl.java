@@ -50,6 +50,7 @@ public class PostServiceImpl implements PostService {
             }
             Post post = postOptional.get();
             post = modelMapper.map(postDto, post.getClass());
+            post = postRepository.save(post);
             if (post != null) {
                 return ResponseBuilder.getSuccessResponse(HttpStatus.OK, "Post Successfully Updated", post);
             }

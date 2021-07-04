@@ -10,6 +10,7 @@ import com.socialMediaApplication.SocialMedia.model.User;
 import com.socialMediaApplication.SocialMedia.repository.RoleRepository;
 import com.socialMediaApplication.SocialMedia.repository.UserRepository;
 import com.socialMediaApplication.SocialMedia.service.AuthService;
+import com.socialMediaApplication.SocialMedia.util.SecurityUtl;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -53,6 +54,7 @@ public class AuthServiceImpl implements AuthService {
             LoginResponseDto loginResponseDto = new LoginResponseDto();
             loginResponseDto.setToken(jwtTokenProvider.generateToken(authentication, request));
             loginResponseDto.setUsername(user.getUsername());
+            loginResponseDto.setUserId(userRepository.findByPhoneAndIsActiveTrue(loginDto.getPhone()).getId());
             return ResponseBuilder.getSuccessResponse(HttpStatus.OK, "Logged In Success", loginResponseDto);
         }
         return ResponseBuilder.getFailureResponse(HttpStatus.BAD_REQUEST, "Invalid Phone or Password");

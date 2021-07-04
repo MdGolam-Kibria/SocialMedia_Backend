@@ -9,4 +9,6 @@ public class LoginResponseDto {
     private String token;
     @JsonInclude(JsonInclude.Include.ALWAYS)
     private String username;
+    @JsonInclude(JsonInclude.Include.ALWAYS)
+    private Long userId;
 }

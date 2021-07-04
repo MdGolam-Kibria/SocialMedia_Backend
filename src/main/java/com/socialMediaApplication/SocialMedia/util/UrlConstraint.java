@@ -32,5 +32,6 @@ public class UrlConstraint {
         public static final String DELETE = "/Delete" + "/{id}";
         public static final String GET = "/GetLocation" + "/{id}";
         public static final String GET_ALL = "/GetAllLocation";
+        public static final String GET_BY_KEY = "/getLocation"+"/{key}";
     }
 }

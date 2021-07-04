@@ -7,4 +7,5 @@ public interface LocationService {
     Response createLocation(LocationDto locationDto);
     Response getAllLocation();
     Response getLocationById(Long locationId);
+    Response getLocationsByKey(String key);
 }

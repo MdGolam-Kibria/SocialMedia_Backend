@@ -12,4 +12,8 @@ public final class SecurityUtl {
         UserPrincipal userPrincipal = (UserPrincipal) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         return userPrincipal != null ? userPrincipal.getId() : null;
     }
+    public static String getLoggedUserName() {
+        UserPrincipal userPrincipal = (UserPrincipal) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        return userPrincipal != null ? userPrincipal.getUsername() : null;
+    }
 }

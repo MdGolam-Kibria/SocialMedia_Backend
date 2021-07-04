@@ -37,4 +37,9 @@ public class LocationController {
     public Response getAllLocation() {
         return locationService.getAllLocation();
     }
+
+    @GetMapping(UrlConstraint.LocationManagement.GET_BY_KEY)
+    public Response getLocationByKey(@PathVariable("key") String key) {
+        return locationService.getLocationsByKey(key);
+    }
 }

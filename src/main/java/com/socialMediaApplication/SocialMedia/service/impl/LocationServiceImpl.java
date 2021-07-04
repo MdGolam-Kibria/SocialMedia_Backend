@@ -73,4 +73,14 @@ public class LocationServiceImpl implements LocationService {
             return ResponseBuilder.getFailureResponse(HttpStatus.INTERNAL_SERVER_ERROR, "Internal Server Error");
         }
     }
+
+    @Override
+    public Response getLocationsByKey(String key) {
+        List<Location> locationList = locationRepository.findByLocationLikeAndIsActiveTrue(key);
+        return locationList.isEmpty()
+                ?
+                ResponseBuilder.getFailureResponse(HttpStatus.NO_CONTENT, "Didn't find any location with this key")
+                :
+                ResponseBuilder.getSuccessResponse(HttpStatus.OK, "Location Retrieved Successfully", locationList);
+    }
 }

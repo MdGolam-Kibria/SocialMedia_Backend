@@ -35,7 +35,7 @@ public class PostController {
     }
 
     @DeleteMapping(UrlConstraint.PostManagement.DELETE)
-    public Response deletePost(@PathVariable("id") Long id, BindingResult result, HttpServletRequest request, HttpServletResponse response) {
+    public Response deletePost(@PathVariable("id") Long id,HttpServletRequest request, HttpServletResponse response) {
         return postService.deletePost(id);
     }
 

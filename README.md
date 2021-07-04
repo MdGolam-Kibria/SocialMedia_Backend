@@ -10,6 +10,6 @@ brain_station_23
 spring.datasource.username=//your name here.
 spring.datasource.password=//your password here.
 ```
-- 3)set your java version from your IDE project structure <b> Java 11</b>
-- 4)if you don't have enable lombok please install lombok from your IDE settings=>plugins.
-- 5) everything ok now you can run the project.
+- 3)Set your java version from your IDE project structure <b> Java 11</b>
+- 4)If you don't have enable lombok please install lombok from your IDE settings=>plugins.
+- 5)Everything ok now you can run the project.
